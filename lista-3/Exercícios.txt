@@ -1,0 +1,96 @@
+Wellington Luiz de Faria -- 1º Semestre DSM
+
+Exercício 1
+
+while True:
+    print('-'*40)
+    try:
+        valor = float(input('Digite um número entre 0 e 10: '))
+        if valor > 10 or valor < 0:
+            print('Por favor informe um valor entre 0 e 10!')
+        else:
+            break
+    except ValueError:
+        print('Por favor informe um valor válido!')
+
+# Usei print para não ficar somente um encerramento sem feedback 
+print('Valor armazenado!')
+
+
+Exercício 2
+
+username = ''
+password = ''
+
+print('Cadastro de usuário')
+while username == password:
+    try:
+        username = str(input('Nome de Usuário: '))
+    except ValueError:
+        print('Por favor informe um Nome de Usuário válido!')
+    
+    try:
+        password = str(input('Senha: '))
+        if password == username:
+            print(f'Não é possível utilizar os mesmos valores para Senha e Nome de Usuário\nTente Novamente!')
+    except:
+        print('Por favor insira uma Senha válida!')
+
+
+Exercício 3
+
+from time import sleep
+
+habitantesA = 80000
+taxa_crescimentoA = 3
+
+habitantesB = 200000
+taxa_crescimentoB = 1.5
+
+anos = 0
+
+while habitantesA < habitantesB:
+    habitantesA += (habitantesA*(taxa_crescimentoA/100))
+    habitantesB += (habitantesB*(taxa_crescimentoB/100))
+    anos += 1
+    print('='*40)
+    print(f'Habitantes A: {int(habitantesA)}\nHabitantes B: {int(habitantesB)}\nAnos passados: {anos}')
+    
+    # Usei sleep para ter uma melhor visualização do crescimento populacional
+    sleep(0.5)
+
+print('='*40)
+print('Resultado Final:')
+print(f'Habitantes A: {int(habitantesA)}\nHabitantes B: {int(habitantesB)}\nAnos passados: {anos} anos')
+
+
+Exercício 4
+
+valor = int(input('Informe um valor para a seu respectivo número da sequencia de Fibonacci: '))
+sequencia = [1, 1]
+
+while len(sequencia)<valor:
+    prox_valor = sequencia[-1] + sequencia[-2]
+    sequencia.append(prox_valor)
+
+for n in sequencia:
+    print(f'{n}', end='  ')
+
+print(f'\nO valor que está posição {valor} informada é: {sequencia[-1]}')
+
+
+Exercício 5
+
+a = int(input("Digite o número a: "))
+b = int(input("Digite o número b:: "))
+
+anterior = a
+atual = b
+
+resto = atual % anterior
+while resto != 0:
+    resto = anterior % atual
+    anterior = atual
+    atual = resto
+
+print(f"Máximo Divisor Comum: {anterior}")

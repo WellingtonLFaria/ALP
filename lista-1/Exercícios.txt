@@ -1,0 +1,111 @@
+Wellington Luiz de Faria -- 1º Semestre DSM
+
+Exercício 1
+
+print('Soma de Números')
+primeiro_numero = float(input('Primeiro Número: '))
+segundo_numero = float(input('Segundo Número: '))
+soma = primeiro_numero + segundo_numero
+
+print(f'A soma entre {primeiro_numero:.2f} e {segundo_numero:.2f} é {soma:.2f}')
+
+
+Exercício 2
+
+print('Conversor de Metros para Milímetros')
+
+metros = float(input('Informe o valor em metros: '))
+milimetros = metros * 1000
+
+print(f'{metros:.2f} metros em milímetros é {milimetros:.2f}')
+
+
+Exercício 3
+
+dias = int(input('Dia(s): '))
+horas = int(input('Hora(s): '))
+minutos = int(input('Minuto(s): '))
+segundos = int(input('Segundo(s): '))
+
+total_em_segundos = dias * 86400 + horas * 3600 + minutos * 60 + segundos
+
+print(f'O total em segundos do tempo informado é: {total_em_segundos}')
+
+
+Exercício 4
+
+salario = float(input('Informe seu salário(R$): '))
+porcentagem = float(input('Informe a porcentagem do aumento: '))
+
+aumento = salario * (porcentagem/100)
+
+salario = salario + aumento
+
+print(f'Seu novo salário após o aumento de R${aumento:.2f} é de: R${salario:.2f}')
+
+
+Exercício 5
+
+valor_do_produto = float(input('Informe o valor do produto(R$): '))
+porcentagem_do_desconto = float(input('Informe o percentual de desconto: '))
+
+valor_do_desconto = valor_do_produto * (porcentagem_do_desconto/100)
+valor_do_produto = valor_do_produto - valor_do_desconto
+
+print(f'O valor do produto após o desconto de R${valor_do_desconto:.2f} é de: R${valor_do_produto:.2f}')
+
+
+Exercício 6
+
+distância_a_percorrer = float(input('Informe a distância total em a percorrer(km): '))
+velocidade_media = float(input('Informe a velocidade média durante o percurso(km/h): '))
+
+tempo_estimado_de_viagem = distância_a_percorrer/velocidade_media
+
+print(f'Para a viagem de {int(distância_a_percorrer)}km, em uma velocidade de {int(velocidade_media)}km/h será gasto {tempo_estimado_de_viagem} horas.')
+
+
+Exercício 7
+
+celsius = float(input('Informe o valor em Celsius para ser convertido para Farenheit: '))
+farenheit = (celsius * 9/5) + 32
+print(f'{celsius}°C em °F é {farenheit}')
+
+
+Exercício 8
+
+farenheit = float(input('Informe o valor em Farenheit para ser convertido para Celsius: '))
+
+celsius = (farenheit - 32) * 5/9
+
+print(f'{farenheit}°F em °C é {celsius:.2f}')
+
+
+Exercício 9
+
+km_percorrido = float(input('Informe a quantidade de km percorridos pelo carro alugado: '))
+dias_alugado = int(input('Informe por quantos dias o carro foi alugado: '))
+
+preço_a_pagar = (60 * dias_alugado) + (0.15 * km_percorrido)
+
+print(f'O preço total a pagar pelo carro alugado por {dias_alugado} dias e {km_percorrido} km rodado é de: R${preço_a_pagar:.2f}')
+
+
+Exercício 10
+
+cigarros_por_dia = int(input('Quantos cigarros você fuma por dia: '))
+anos_fumando = int(input('Anos fumando: '))
+
+total_de_minutos_perdidos = cigarros_por_dia * 365 * anos_fumando * 10
+dias_perdidos = total_de_minutos_perdidos/1440
+
+print(f'Você perdeu {dias_perdidos:.2f} dias de sua vida.')
+
+
+Exercício 11
+
+# Precisei importar a biblioteca devido ao limite de dígitos da minha máquina
+import sys
+sys.set_int_max_str_digits(0)
+
+print(len(str(2 ** 10 ** 6)))
