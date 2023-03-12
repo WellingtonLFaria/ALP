@@ -9,8 +9,6 @@ def maior_e_menor(vetor):
             maior = numero
         if numero < menor:
             menor = numero
-    
-    vetor.sort()
 
     return vetor, maior, menor
 
