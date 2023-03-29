@@ -1,0 +1,124 @@
+Wellington Luiz de Faria -- 1º Semestre DSM
+
+Exercício 1
+
+l1 = float(input('Lado 1: '))
+l2 = float(input('Lado 2: ')) 
+l3 = float(input('Lado 3: '))
+
+if l1 < l2 + l3 and l2 < l1 + l3 and l3 < l1 + l2:
+    if l1 == l2 and l2 == l3:
+        print('É um triângulo equilátero!')
+    elif l1 == l2 or l1 == l3 or l2 == l3:
+        print('É um triângulo isóceles!')
+    else:
+        print('É um triângulo escaleno!')
+else:
+    print('Não é um triângulo!')
+
+
+
+Exercício 2
+
+year = int(input('Informe o ano que deseja saber se é bissexto: '))
+bissexto = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+
+if bissexto == True:
+    print(f'O ano {year} é bissexto!')
+else:
+    print(f'O ano {year} não é bissexto!')
+
+
+
+Exercício 3
+
+peso = float(input('Informe o peso(kg): '))
+
+print('-'*30)
+
+if peso > 50:
+    excesso = peso - 50
+    multa = excesso * 4
+    print(f'Peso dos peixes(kg): {peso:.2f}\nExcesso(kg): {excesso:.2f}\nMulta: R$ {multa:.2f}')
+else:
+    print(f'Peso dos peixes(kg): {peso:.2f}\nExcesso(kg): 0\nMulta: R$ 0')
+
+
+
+Exercício 4
+
+n1 = float(input('Número 1: '))
+n2 = float(input('Número 2: '))
+n3 = float(input('Número 3: '))
+
+if n1 == n2 == n3:
+    print('Todos os números são iguais!')
+else:
+    if n1 >= n2 and n1 >= n3:
+        print(f'{n1} é o maior número.')
+    elif n2 >= n1 and n2 >= n3:
+        print(f'{n2} é o maior número.')
+    elif n3 >= n1 and n3 >= n2:
+        print(f'{n3} é o maior número.')
+
+
+
+Exercício 5
+
+n1 = float(input('Número 1: '))
+n2 = float(input('Número 2: '))
+n3 = float(input('Número 3: '))
+
+if n1 == n2 == n3:
+    print('Todos os números são iguais!')
+else:
+    # Maior número
+    if n1 >= n2 and n1 >= n3:
+        print(f'{n1} é o maior número.')
+    elif n2 >= n1 and n2 >= n3:
+        print(f'{n2} é o maior número.')
+    elif n3 >= n1 and n3 >= n1:
+        print(f'{n3} é o maior número.')
+
+    # Menor número
+    if n1 <= n2 and n1 <= n3:
+        print(f'{n1} é o menor número.')
+    elif n2 <= n1 and n2 <= n3:
+        print(f'{n2} é o menor número.')
+    elif n3 <= n1 and n3 <= n1:
+        print(f'{n3} é o menor número.')
+
+
+
+Exercício 6
+
+salario_bruto = ganho_por_hora * horas_trabalhadas
+imposto_de_renda = salario_bruto * (18/100)
+inss = salario_bruto * (8/100)
+sindicato = salario_bruto * (5/100)
+salario_liquido = salario_bruto - (imposto_de_renda + inss + sindicato)
+
+print('-'*30)
+print(f'Salário Bruto: R$ {salario_bruto:.2f}')
+print('-'*30)
+print('DESCONTOS')
+print(f'Imposto de Renda: R$ -{imposto_de_renda:.2f}\nINSS: R$ -{inss:.2f}\nSindicato: R$ -{sindicato:.2f}')
+print('-'*30)
+print(f'Salário Líquido: R$ {salario_liquido:.2f}')
+
+
+
+Exercício 7
+
+area = float(input('Informe em m² o tamanho da área a ser pintada: '))
+
+litros_necessarios = area/3
+latas_necessarias = litros_necessarios/18
+
+if latas_necessarias > int(latas_necessarias):
+    latas_necessarias = latas_necessarias + ((int(latas_necessarias)+1)-latas_necessarias)
+
+preco_total = latas_necessarias * 80
+
+print('-'*50)
+print(f'Área a ser pintada(m²): {area:.2f}\nLitros de tinta necessários: {litros_necessarios:.2f}\nLatas de tintas necessárias: {latas_necessarias:.2f}\nPreço Total a pagar: R$ {preco_total:.2f}')

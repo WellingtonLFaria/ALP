@@ -1,0 +1,95 @@
+Wellington Luiz de Faria -- 1º Semestre DSM
+
+Exercício 1
+
+from random import sample
+
+def maior_e_menor(vetor):
+    maior = vetor[0]
+    menor = vetor[0]
+
+    for numero in vetor:
+        if numero > maior:
+            maior = numero
+        if numero < menor:
+            menor = numero
+
+    return vetor, maior, menor
+
+numeros, maior, menor = maior_e_menor(sample(range(1, 100), 10))
+
+print(f'Números: {numeros}\nMaior: {maior}\nMenor: {menor}')
+
+Exercício 2
+
+from random import sample
+
+def pares_e_impares(vetor):
+    pares = []
+    impares = []
+
+    for numero in vetor:
+        if numero % 2 == 0:
+            pares.append(numero)
+        else:
+            impares.append(numero)
+    
+    pares.sort()
+    impares.sort()
+    vetor.sort()
+    return vetor, pares, impares
+    
+numeros, pares, impares = pares_e_impares(sample(range(1, 100), 20))
+
+print(f'Números: {numeros}\nPares: {pares}\nÍmpares: {impares}')
+
+
+Exercício 3
+
+from random import sample
+
+def intercalar_valores():
+    vetor1 = sample(range(1, 100), 10)
+    vetor2 = sample(range(1, 100), 10)
+    vetor3 = []
+
+    for c in range(0, 10):
+        vetor3.append(vetor1[c])
+        vetor3.append(vetor2[c])
+    
+    return vetor1, vetor2, vetor3
+
+vetor1, vetor2, vetor3 = intercalar_valores()
+print(f'Vetor 1: {vetor1}\nVetor 2: {vetor2}\nVetor 3: {vetor3}')
+
+Exercício 4
+
+def ex4(statement):
+    statement = statement.replace('.', '').replace(',', '').replace(':', '').lower().split()
+    palavras = []
+    for palavra in statement:
+        if palavra[0] in 'python' or palavra[-1] in 'python':
+                palavras.append(palavra)
+    return palavras
+
+statement = "The Python Software Foundation and the global Python community welcome and encourage participation by everyone. Our community is based on mutual respect, tolerance, and encouragement, and we are working to help each other live up to these principles. We want our community to be more diverse: whoever you are, and whatever your background, we welcome you."
+
+print(ex4(statement))
+
+Exercício 5
+
+def ex5(statement):
+    statement = statement.replace('.', '').replace(',', '').replace(':', '').lower().split()
+    palavras = []
+    for palavra in statement:
+        if len(palavra) > 4:
+            for letra in palavra:
+                if letra in 'python':
+                    palavras.append(palavra)
+                    break
+    return palavras
+
+statement = "The Python Software Foundation and the global Python community welcome and encourage participation by everyone. Our community is based on mutual respect, tolerance, and encouragement, and we are working to help each other live up to these principles. We want our community to be more diverse: whoever you are, and whatever your background, we welcome you."
+
+palavras = ex5(statement=statement)
+print(palavras)
